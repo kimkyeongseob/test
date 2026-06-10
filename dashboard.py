@@ -131,7 +131,7 @@ st.divider()
 # ── AI 데이터 Q&A ─────────────────────────────
 st.subheader("🤖 AI에게 데이터 질문하기")
 
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
 
 if not api_key:
     st.info("GEMINI_API_KEY가 설정되지 않았습니다. .env 파일에 키를 입력해주세요.")
